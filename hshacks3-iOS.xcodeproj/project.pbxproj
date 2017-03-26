@@ -13,9 +13,14 @@
 		87113F561E874FE600501B77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87113F541E874FE600501B77 /* Main.storyboard */; };
 		87113F581E874FE600501B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87113F571E874FE600501B77 /* Assets.xcassets */; };
 		87113F5B1E874FE600501B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87113F591E874FE600501B77 /* LaunchScreen.storyboard */; };
+		87CE23401E8756250023EAD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87CE233F1E8756250023EAD9 /* GoogleService-Info.plist */; };
+		E26ADBB48A42AD7BD1886F86 /* Pods_hshacks3_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094A1B055EBE20DCB9AED697 /* Pods_hshacks3_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		094A1B055EBE20DCB9AED697 /* Pods_hshacks3_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hshacks3_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FA052F95F836059D3CA5305 /* Pods-hshacks3-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hshacks3-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-hshacks3-iOS/Pods-hshacks3-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		32CDFB5A492751270C0EFDEF /* Pods-hshacks3-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hshacks3-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hshacks3-iOS/Pods-hshacks3-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		87113F4B1E874FE600501B77 /* hshacks3-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hshacks3-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87113F4E1E874FE600501B77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87113F501E874FE600501B77 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		87113F571E874FE600501B77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87113F5A1E874FE600501B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87113F5C1E874FE600501B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87CE233F1E8756250023EAD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26ADBB48A42AD7BD1886F86 /* Pods_hshacks3_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5204D243508C45D2DBCDFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				094A1B055EBE20DCB9AED697 /* Pods_hshacks3_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		87113F421E874FE600501B77 = {
 			isa = PBXGroup;
 			children = (
 				87113F4D1E874FE600501B77 /* hshacks3-iOS */,
 				87113F4C1E874FE600501B77 /* Products */,
+				BD65AA4E29E0DD82A296EA0B /* Pods */,
+				0B5204D243508C45D2DBCDFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +80,18 @@
 				87113F571E874FE600501B77 /* Assets.xcassets */,
 				87113F591E874FE600501B77 /* LaunchScreen.storyboard */,
 				87113F5C1E874FE600501B77 /* Info.plist */,
+				87CE233F1E8756250023EAD9 /* GoogleService-Info.plist */,
 			);
 			path = "hshacks3-iOS";
+			sourceTree = "<group>";
+		};
+		BD65AA4E29E0DD82A296EA0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32CDFB5A492751270C0EFDEF /* Pods-hshacks3-iOS.debug.xcconfig */,
+				1FA052F95F836059D3CA5305 /* Pods-hshacks3-iOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87113F5F1E874FE600501B77 /* Build configuration list for PBXNativeTarget "hshacks3-iOS" */;
 			buildPhases = (
+				71A0B44EDD70279C5CFACF22 /* [CP] Check Pods Manifest.lock */,
 				87113F471E874FE600501B77 /* Sources */,
 				87113F481E874FE600501B77 /* Frameworks */,
 				87113F491E874FE600501B77 /* Resources */,
+				85B2DED925BB32A37A8F05DA /* [CP] Embed Pods Frameworks */,
+				72621CB371838925864271A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,12 +158,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				87113F5B1E874FE600501B77 /* LaunchScreen.storyboard in Resources */,
+				87CE23401E8756250023EAD9 /* GoogleService-Info.plist in Resources */,
 				87113F581E874FE600501B77 /* Assets.xcassets in Resources */,
 				87113F561E874FE600501B77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71A0B44EDD70279C5CFACF22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72621CB371838925864271A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hshacks3-iOS/Pods-hshacks3-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85B2DED925BB32A37A8F05DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hshacks3-iOS/Pods-hshacks3-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		87113F471E874FE600501B77 /* Sources */ = {
@@ -261,6 +340,7 @@
 		};
 		87113F601E874FE600501B77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32CDFB5A492751270C0EFDEF /* Pods-hshacks3-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SPT6NYU373;
@@ -274,6 +354,7 @@
 		};
 		87113F611E874FE600501B77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FA052F95F836059D3CA5305 /* Pods-hshacks3-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SPT6NYU373;
@@ -304,6 +385,7 @@
 				87113F611E874FE600501B77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
