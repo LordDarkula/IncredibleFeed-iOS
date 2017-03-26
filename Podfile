@@ -14,5 +14,6 @@ target 'hshacks3-iOS' do
   pod 'Fabric'
   pod 'TwitterKit'
   pod 'TwitterCore'
+  pod 'Alamofire'
 
 end
