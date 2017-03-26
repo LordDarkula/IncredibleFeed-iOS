@@ -14,6 +14,7 @@
 		87113F581E874FE600501B77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87113F571E874FE600501B77 /* Assets.xcassets */; };
 		87113F5B1E874FE600501B77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87113F591E874FE600501B77 /* LaunchScreen.storyboard */; };
 		87CE23401E8756250023EAD9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87CE233F1E8756250023EAD9 /* GoogleService-Info.plist */; };
+		87CE23421E8778F00023EAD9 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE23411E8778F00023EAD9 /* LogInViewController.swift */; };
 		E26ADBB48A42AD7BD1886F86 /* Pods_hshacks3_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094A1B055EBE20DCB9AED697 /* Pods_hshacks3_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		87113F5A1E874FE600501B77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87113F5C1E874FE600501B77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87CE233F1E8756250023EAD9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		87CE23411E8778F00023EAD9 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				87113F4E1E874FE600501B77 /* AppDelegate.swift */,
+				87CE23411E8778F00023EAD9 /* LogInViewController.swift */,
 				87113F501E874FE600501B77 /* FirstViewController.swift */,
 				87113F521E874FE600501B77 /* SecondViewController.swift */,
 				87113F541E874FE600501B77 /* Main.storyboard */,
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CE23421E8778F00023EAD9 /* LogInViewController.swift in Sources */,
 				87113F531E874FE600501B77 /* SecondViewController.swift in Sources */,
 				87113F4F1E874FE600501B77 /* AppDelegate.swift in Sources */,
 				87113F511E874FE600501B77 /* FirstViewController.swift in Sources */,
@@ -345,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SPT6NYU373;
 				INFOPLIST_FILE = "hshacks3-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "deep.hshacks3-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SPT6NYU373;
 				INFOPLIST_FILE = "hshacks3-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "deep.hshacks3-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
