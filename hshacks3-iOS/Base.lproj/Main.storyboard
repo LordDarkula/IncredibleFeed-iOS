@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,16 +100,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anr-7v-cTb">
-                                <rect key="frame" x="149" y="131" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anr-7v-cTb">
+                                <rect key="frame" x="147" y="318" width="80" height="30"/>
+                                <state key="normal" title="Add Acount"/>
                                 <connections>
                                     <action selector="LogIn:" destination="Mfo-2a-kwQ" eventType="touchUpInside" id="HTI-Pe-TuS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2r-7g-FBs">
+                                <rect key="frame" x="148" y="448" width="79" height="30"/>
+                                <state key="normal" title="Go To Feed"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="popoverPresentation" popoverAnchorView="Q2r-7g-FBs" id="7UQ-7R-dyu">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q2r-7g-FBs" firstAttribute="centerX" secondItem="6wM-SZ-ktr" secondAttribute="centerX" id="HFH-EP-Zsb"/>
+                            <constraint firstItem="anr-7v-cTb" firstAttribute="centerX" secondItem="6wM-SZ-ktr" secondAttribute="centerX" id="LpZ-1N-k7c"/>
+                            <constraint firstItem="anr-7v-cTb" firstAttribute="centerY" secondItem="6wM-SZ-ktr" secondAttribute="centerY" id="WoX-ih-tUU"/>
+                            <constraint firstItem="Q2r-7g-FBs" firstAttribute="top" secondItem="anr-7v-cTb" secondAttribute="bottom" constant="100" id="oPV-Mi-s74"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3T-44-7Fn" userLabel="First Responder" sceneMemberID="firstResponder"/>
