@@ -14,9 +14,12 @@ import FirebaseFacebookAuthUI
 import FirebaseTwitterAuthUI
 import Fabric
 import TwitterKit
+import Alamofire
 
 
 class LogInViewController: UIViewController, FUIAuthDelegate {
+    
+    let requestURL: String = "https://httpbin.org/post"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +54,26 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
+        let email = user?.email ?? ""
         Twitter.sharedInstance().logIn { session, error in
             if (session != nil) {
-                print("signed in as \(session?.userName)");
-                print(session?.authTokenSecret)
+                let authToken = session?.authToken ?? ""
+                let authTokenSecret = session?.authTokenSecret ?? ""
+                
+                let params: Parameters = [
+                    "authToken": authToken,
+                    "authTokenSecret": authTokenSecret,
+                    "email": email
+                ]
+                
+                Alamofire.request(self.requestURL, method: .post, parameters: params, encoding: JSONEncoding.default)
+                    .responseJSON { response in
+                        if let json = response.result.value {
+                            print("JSON: \(json)")
+                        } else {
+                            print("Did not receive json")
+                        }
+                }
             } else {
                 print("error: \(error?.localizedDescription)");
             }
