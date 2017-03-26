@@ -15,5 +15,6 @@ target 'hshacks3-iOS' do
   pod 'TwitterKit'
   pod 'TwitterCore'
   pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

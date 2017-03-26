@@ -89,6 +89,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SwiftyJSON (3.1.4)
   - TwitterCore (2.8.0):
     - Fabric
   - TwitterKit (2.8.1):
@@ -102,6 +103,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FirebaseUI
   - GoogleSignIn
+  - SwiftyJSON
   - TwitterCore
   - TwitterKit
 
@@ -124,9 +126,10 @@ SPEC CHECKSUMS:
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: aaa1614bc37fe1fdc42fc33c0f4d822789a0db6a
+PODFILE CHECKSUM: df445b8db025b5b03fc28507cbe4f0d6684affee
 
 COCOAPODS: 1.1.1

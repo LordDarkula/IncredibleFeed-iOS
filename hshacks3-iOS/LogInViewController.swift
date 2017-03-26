@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
-import FirebaseFacebookAuthUI
 import FirebaseTwitterAuthUI
 import Fabric
 import TwitterKit
@@ -55,6 +54,9 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         let email = user?.email ?? ""
+        let defaults = UserDefaults.standard
+        defaults.set(email, forKey: "email")
+        
         Twitter.sharedInstance().logIn { session, error in
             if (session != nil) {
                 let authToken = session?.authToken ?? ""
@@ -74,6 +76,7 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
                             print("Did not receive json")
                         }
                 }
+                
             } else {
                 print("error: \(error?.localizedDescription)");
             }
