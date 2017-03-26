@@ -10,7 +10,9 @@ target 'hshacks3-iOS' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
-  pod 'Firebase'
   pod 'FirebaseUI'
+  pod 'Fabric'
+  pod 'TwitterKit'
+  pod 'TwitterCore'
 
 end

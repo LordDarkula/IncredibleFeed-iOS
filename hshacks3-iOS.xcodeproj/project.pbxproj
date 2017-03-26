@@ -110,6 +110,7 @@
 				87113F491E874FE600501B77 /* Resources */,
 				85B2DED925BB32A37A8F05DA /* [CP] Embed Pods Frameworks */,
 				72621CB371838925864271A7 /* [CP] Copy Pods Resources */,
+				8752C3D21E87992700CA44BD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -214,6 +215,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hshacks3-iOS/Pods-hshacks3-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8752C3D21E87992700CA44BD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" bd49fc97a5f9d99b9be40b973bc3af38ab5efbc6 378f61b3a02b0d583b01258018e2e86f77b66341eaef98967df2b0092b53a7ff";
 		};
 /* End PBXShellScriptBuildPhase section */
 
