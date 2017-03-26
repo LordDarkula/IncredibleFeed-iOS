@@ -29,22 +29,51 @@ class TwitterViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         activity.hidesWhenStopped = true
         activity.startAnimating()
+        refresh()
         
         let defaults = UserDefaults.standard
         let email = defaults.string(forKey: "email") ?? "none"
-        print(email)
         
-        let userRef = rootRef.child("users").child("amazing")
+        let userRef = rootRef.child("users").child(email)
         userRef.observe(.value, with: {(snapshot) in
+            
+            print("Fetching Firebase")
             if let value = snapshot.value as? Array<Any> {
                 self.tweets = JSON(value)
-                self.tableView.reloadData()
                 self.activity.stopAnimating()
+                self.refresh()
+                print(self.tweets.count)
             }
             
         })
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        refresh()
+    }
+    
+    func refresh() {
+        let defaults = UserDefaults.standard
+        
+        let fakeNews = defaults.bool(forKey: "fakeNews")
+        let meanTweets = defaults.bool(forKey: "meanTweets")
+        
+        print(fakeNews)
+        print(meanTweets)
+        
+        var newTweets = [Any]()
+        for tweet in self.tweets {
+            let realTweet = JSON(tweet)
+            if (!fakeNews || realTweet["validity"].boolValue) && (!meanTweets || !realTweet["harass"].boolValue) {
+                newTweets.append(realTweet)
+            }
+        }
+        self.tweets = JSON(newTweets)
+        
+        self.tableView.reloadData()
 
+    }
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -21,6 +21,14 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func fakeNews(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set((sender as! UISwitch).isOn, forKey: "fakeNews")
+    }
 
+    @IBAction func meanTweets(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set((sender as! UISwitch).isOn, forKey: "meanTweets")
+    }
 }
 

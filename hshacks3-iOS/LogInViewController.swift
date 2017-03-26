@@ -18,7 +18,7 @@ import Alamofire
 
 class LogInViewController: UIViewController, FUIAuthDelegate {
     
-    let requestURL: String = "https://httpbin.org/post"
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,22 +53,28 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        let email = user?.email ?? ""
+        var email = user?.email ?? ""
+        email = String(email.hashValue)
+        
         let defaults = UserDefaults.standard
         defaults.set(email, forKey: "email")
+        defaults.set(true, forKey: "fakeNews")
+        defaults.set(true, forKey: "meanTweets")
         
         Twitter.sharedInstance().logIn { session, error in
             if (session != nil) {
                 let authToken = session?.authToken ?? ""
                 let authTokenSecret = session?.authTokenSecret ?? ""
                 
+                let requestURL: String = "http://10.10.180.244:8000/twitter/?TwitterKey=\(authToken)&TwitterSecret=\(authTokenSecret)&email=\(email)"
                 let params: Parameters = [
-                    "authToken": authToken,
-                    "authTokenSecret": authTokenSecret,
+                    "TwitterKey": authToken,
+                    "TwitterSecret": authTokenSecret,
                     "email": email
                 ]
+                print("HTTP prequest")
                 
-                Alamofire.request(self.requestURL, method: .post, parameters: params, encoding: JSONEncoding.default)
+                Alamofire.request(requestURL, method: .get, parameters: params, encoding: JSONEncoding.default)
                     .responseJSON { response in
                         if let json = response.result.value {
                             print("JSON: \(json)")
