@@ -12,6 +12,8 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FirebaseFacebookAuthUI
 import FirebaseTwitterAuthUI
+import Fabric
+import TwitterKit
 
 
 class LogInViewController: UIViewController, FUIAuthDelegate {
@@ -40,7 +42,7 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
         authUI?.delegate = self
         
         // We set the sign in providers here
-        authUI?.providers = [FUIGoogleAuth()]
+        authUI?.providers = [FUITwitterAuth(), FUIGoogleAuth()]
         
         // Present the default login view controller provided by authUI
         let authViewController = authUI?.authViewController();
@@ -49,7 +51,16 @@ class LogInViewController: UIViewController, FUIAuthDelegate {
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
-        // Here is where we add code after logging in
+        Twitter.sharedInstance().logIn { session, error in
+            if (session != nil) {
+                print("signed in as \(session?.userName)");
+                print(session?.authTokenSecret)
+            } else {
+                print("error: \(error?.localizedDescription)");
+            }
+        }
+        
+        
     }
 
     /*
